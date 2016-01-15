@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <!-- MySQLJar -->
+    <classPathEntry location="D:/jar/jdbc/mysql-connector-java-5.1.6.jar"/>
+
+    <context id="myConfig">
+
+        <!--去掉自动产生的注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql:///douban_movie"
+                        userId="root" password="root"/>
+
+        <!-- POJO -->
+        <javaModelGenerator targetPackage="com.kaishengit.pojo" targetProject="src/main/java"></javaModelGenerator>
+
+        <!-- XML映射文件 -->
+        <!--<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"></sqlMapGenerator>-->
+
+        <!-- Mapper接口 -->
+        <!--<javaClientGenerator type="XMLMAPPER" targetPackage="com.kaishengit.dao" targetProject="src/main/java"></javaClientGenerator>-->
+
+        <table tableName="movie" domainObjectName="Movie"
+         enableUpdateByExample="false" enableSelectByExample="false"
+        enableDeleteByExample="false" enableCountByExample="false"></table>
+    </context>
+</generatorConfiguration>
